@@ -3443,7 +3443,6 @@ return NO;
 - (IBAction)toggleFullScreenMode:(id)sender
 {
     DLog(@"toggleFullScreenMode:. window type is %d", windowType_);
-#if 0
     if ([self lionFullScreen] ||
         (windowType_ != WINDOW_TYPE_TRADITIONAL_FULL_SCREEN &&
          !self.isHotKeyWindow &&  // NSWindowCollectionBehaviorFullScreenAuxiliary window can't enter Lion fullscreen mode properly
@@ -3463,7 +3462,6 @@ return NO;
         // TODO(georgen): toggle enabled status of use transparency menu item
         return;
     }
-#endif
     [self toggleTraditionalFullScreenMode];
 }
 

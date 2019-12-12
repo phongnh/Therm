@@ -1882,7 +1882,8 @@ static const int kDragThreshold = 3;
 
 - (void)mouseEntered:(NSEvent *)event {
     DLog(@"Mouse entered %@", self);
-    if ([iTermAdvancedSettingsModel stealKeyFocus] && [iTermPreferences boolForKey:kPreferenceKeyFocusFollowsMouse]) {
+    // if ([iTermAdvancedSettingsModel stealKeyFocus] && [iTermPreferences boolForKey:kPreferenceKeyFocusFollowsMouse]) {
+    if (NO) {
         DLog(@"Trying to steal key focus");
         if ([self stealKeyFocus]) {
             ++_keyFocusStolenCount;
@@ -1890,7 +1891,8 @@ static const int kDragThreshold = 3;
         }
     }
     [self updateCursor:event action:[self updateUnderlinedURLs:event]];
-    if ([iTermPreferences boolForKey:kPreferenceKeyFocusFollowsMouse] && [[self window] alphaValue] > 0 && ![NSApp modalWindow]) {
+    // if ([iTermPreferences boolForKey:kPreferenceKeyFocusFollowsMouse] && [[self window] alphaValue] > 0 && ![NSApp modalWindow]) {
+    if (NO) {
         // Some windows automatically close when they lose key status and are
         // incompatible with FFM. Check if the key window or its controller implements
         // disableFocusFollowsMouse and if it returns YES do nothing.

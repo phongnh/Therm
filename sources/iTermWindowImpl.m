@@ -142,6 +142,9 @@ ITERM_WEAKLY_REFERENCEABLE
 }
 
 - (void)toggleFullScreen:(nullable id)sender {
+   // hack to toggle native fullscreen. ignore settings
+   [super toggleFullScreen:sender];
+   return;
    // hack to avoid native fullscreen to work. ignore settings
         [(id<PTYWindowDelegateProtocol>)[self delegate] toggleTraditionalFullScreenMode];
 return;

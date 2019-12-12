@@ -41,6 +41,9 @@ Dep:
 Deployment:
 	xcodebuild -parallelizeTargets -target Therm -configuration Deployment && \
 	chmod -R go+rX build/Deployment
+	rm -rf /Applications/Therm.app
+	cp -fR build/Deployment/Therm.app /Applications/Therm.app
+	echo "Copied 'build/Deployment/Therm.app' to '/Applications'"
 
 Nightly: force
 	cp plists/nightly-Therm.plist plists/Therm.plist
